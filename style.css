@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bgColor: rgb(213, 231, 213);
+    --b-font: 3rem;
+    --sm-font: .5rem;
+    --m-font: 1.5rem;
+    
+}
+
+body{
+    background-color: var(--bgColor);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.uebung{
+    padding: 1rem;
+    text-align: center;
+    font-size: var(--b-font);
+}
+
+.container{
+    background-color: aliceblue;
+    display: flex;
+    width: 80vw;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.item1, .item2, .item3, .item4 {
+    background-color: blue;
+    width: 10vw;
+    height: 10vh;
+    margin: 1rem;
+    flex: 1;
+}
+
+.item1, .item4{
+    flex: 1;
+}
+
+.container-grid{
+    background-color: aliceblue;
+    width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.item1-grid, .item2-grid, .item3-grid, .item4-grid,
+.item5-grid, .item6-grid, .item7-grid, .item8-grid{
+    background-color: aquamarine;
+    background: radial-gradient(  rgb(255, 220, 22),   rgba(247, 252, 181, 0.932), gold, gold
+    );
+    width: 8rem;
+    height: 8rem;
+    margin: 1rem;
+    border-radius: 50%;
+
+    /* padding-bottom: 1rem; */
+
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+    border: rgba(77, 66, 8, 0.466) solid .3rem;
+    font-size: 4rem;
+    color: rgba(128, 128, 128, 0.781);
+    font-family: 'Baskerville';
+    font-style: bolder;
+    
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5); /* Tieferer Schatten */
+    
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    will-change: transform;
+
+    
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(120deg) ;
+    }
+    66% {
+        transform: rotate(240deg) ;
+    }
+    100% {
+        transform: rotate(360deg) ;
+    }
+}
+
+.item4-grid:hover,
+.item3-grid:hover,
+.item2-grid:hover,
+.item1-grid:hover {
+    transform: scale(1.2); /* Skaliert das Element auf 120% der Originalgröße */
+    transition: transform 0.3s ease; /* Sanfte Animation */
+}
